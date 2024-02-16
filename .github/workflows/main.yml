@@ -1,0 +1,17 @@
+name: Test_hosted_runner03
+
+# push時に実行
+on: push
+
+jobs:
+  ansible-lint03:
+    # セルフホステッドランナー上で使用
+    runs-on: self-hosted
+    # permissions:
+    #   contents: write
+
+    steps:
+
+      # ansible-lintのバージョンチェック
+      - name: Version check ansible
+        run: ansible-lint --version
